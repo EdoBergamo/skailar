@@ -14,3 +14,7 @@ export const RegisterSchema = z.object({
   }).max(23),
   name: z.string().min(3)
 })
+
+export const ResetSchema = z.object({
+  email: z.string().email(),
+})
