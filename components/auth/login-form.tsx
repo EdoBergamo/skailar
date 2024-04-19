@@ -2,7 +2,6 @@
 
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSearchParams } from "next/navigation";
 
 import {
   Form,
@@ -16,6 +15,8 @@ import {
 import * as z from "zod"
 import { LoginSchema } from "@/schemas"
 
+// import { useSearchParams } from "next/navigation"
+
 import { CardWrapper } from "./card-wrapper"
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -25,13 +26,13 @@ import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 
 export const LoginForm = () => {
+  // const searchParams = useSearchParams();
+  // const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
+  //   ? "Email already in use with different Provider"
+  //   : "";
+
   const [error, setError] = useState<string | undefined>("")
   const [success, setSuccess] = useState<string | undefined>("")
-
-  const searchParams = useSearchParams();
-  const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
-    ? "Email already in use with different Provider"
-    : "";
 
   const [isPending, startTransition] = useTransition();
 
@@ -103,7 +104,7 @@ export const LoginForm = () => {
             />
           </div>
 
-          <FormError message={error || urlError} />
+          <FormError message={error} />
           <FormSuccess message={success} />
 
           <Button
