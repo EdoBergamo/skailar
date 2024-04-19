@@ -13,7 +13,7 @@ export const Navbar = () => {
     { id: 3, href: '/status', text: 'Status' },
     { id: 4, href: '/reviews', text: 'Reviews' },
     { id: 5, href: '/contact', text: 'Contact' },
-    { id: 6, href: 'https://discord.gg/7KmtuNKm49', target: '_blank', text: 'Discord' },
+    { id: 6, href: `${process.env.DISCORD_INVITE_LINK}`, target: '_blank', text: 'Discord' },
   ];
 
   return (
