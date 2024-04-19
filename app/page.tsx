@@ -1,3 +1,4 @@
+import { Discord } from "@/components/discord";
 import { Features } from "@/components/features";
 import { Jumbotron } from "@/components/jumbotron";
 import { Navbar } from "@/components/navbar";
@@ -10,6 +11,7 @@ export default function Home() {
       <Jumbotron />
       <Partners />
       <Features />
+      <Discord />
     </main>
   );
 }
