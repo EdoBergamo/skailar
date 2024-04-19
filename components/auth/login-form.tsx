@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
 
 import {
   Form,
@@ -27,6 +28,11 @@ export const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("")
   const [success, setSuccess] = useState<string | undefined>("")
 
+  const searchParams = useSearchParams();
+  const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
+    ? "Email already in use with different Provider"
+    : "";
+
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -44,11 +50,9 @@ export const LoginForm = () => {
     startTransition(() => {
       login(values)
         .then((data) => {
-          if (data) {
-            setError(data.error);
-          } else {
-            setError("An error occurred while logging in.");
-          }
+          setError(data?.error)
+          //  TODO: Add with 2FA
+          //  setSuccess(data?.success)
         })
     })
   }
@@ -99,7 +103,7 @@ export const LoginForm = () => {
             />
           </div>
 
-          <FormError message={error} />
+          <FormError message={error || urlError} />
           <FormSuccess message={success} />
 
           <Button
