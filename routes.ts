@@ -6,7 +6,11 @@
 
 export const publicRoutes = [
   "/",
-  "/new-verification"
+  "/new-verification",
+  "/products",
+  "/reviews",
+  "/contact",
+  "/terms",
 ]
 
 /**
