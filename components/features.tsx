@@ -1,7 +1,6 @@
 import { ClockIcon } from "@radix-ui/react-icons";
 import { BiChip, BiMouse, BiSupport } from "react-icons/bi";
-import { FaEye, FaRobot } from "react-icons/fa";
-import { MdEmail, MdOutlineSecurity } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 import { RxUpdate } from "react-icons/rx";
 
 export const Features = () => {
