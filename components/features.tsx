@@ -1,18 +1,19 @@
+import { ClockIcon } from "@radix-ui/react-icons";
+import { BiChip, BiMouse, BiSupport } from "react-icons/bi";
+import { FaEye, FaRobot } from "react-icons/fa";
+import { MdEmail, MdOutlineSecurity } from "react-icons/md";
 import { RxUpdate } from "react-icons/rx";
-import { BiSupport } from "react-icons/bi";
-import { GrStatusGood } from "react-icons/gr";
-import { MdOutlineSecurity } from "react-icons/md";
-import { IoHardwareChip, IoGameController } from "react-icons/io5";
 
 export const Features = () => {
   const data = [
-    { id: 1, icon: IoHardwareChip, title: 'Elite HWID Spoofer', description: 'Utilizing cutting-edge ring0 kernel spoofing, our Military Grade HWID Spoofer guarantees that you\'ll remain in the game, untouched by bans' },
-    { id: 2, icon: RxUpdate, title: 'Security Updates', description: 'Stay ahead of the game with instant updates. Our cheats adapt swiftly to game patches, ensuring you experience uninterrupted gameplay' },
-    { id: 3, icon: GrStatusGood, title: 'Cheat Status', description: 'Get a live overview of the cheat\'s status. Know when it\'s active, ensuring you\'re always in control of your gaming experience' },
-    { id: 4, icon: MdOutlineSecurity, title: 'Subscription Insurance', description: 'Worried about losing out due to updates? Fear not. With FULL COMPENSATION, you\'re covered. Your subscription time remains untouched, even during cheat updates or game patches' },
-    { id: 5, icon: IoGameController, title: 'Multi-Game Compatibility', description: 'Extend your advantage across multiple games with cheats that are compatible with various titles, providing versatility and value for your subscription.' },
-    { id: 6, icon: BiSupport, title: 'Customer Support', description: 'Gain access to a dedicated support channel, ensuring your queries and concerns are addressed promptly, offering a premium support experience' },
-  ]
+    { id: 1, icon: ClockIcon, title: 'Instant Delivery', description: 'We guarantee instant product delivery once payment is processed.' },
+    { id: 2, icon: BiMouse, title: 'Intuitive GUI', description: 'Our intuitive GUI offers extensive customization through a unique, non-ImGUI based framework.' },
+    { id: 3, icon: BiChip, title: 'HWID Spoofer', description: 'All our products include a Battleye HWID spoofer, allowing you to play any Battleye game even if you\'re already HWID banned.' },
+    { id: 4, icon: FaEye, title: 'Transparency', description: 'Our status page lists all products, with automated statuses linked to our client. It also indicates when we last updated each cheat feature.' },
+    { id: 5, icon: RxUpdate, title: 'Security Updates', description: 'Stay ahead of the game with instant updates. Our cheats adapt swiftly to game patches, ensuring uninterrupted gameplay.' },
+    { id: 6, icon: BiSupport, title: 'Customer Support', description: 'Access a dedicated support channel, ensuring your questions and concerns are promptly addressed, offering a premium support experience.' }
+  ];
+  
   return (
     <section className="mt-28 flex flex-col justify-center">
       <h2 className="text-center text-white font-medium text-5xl">
