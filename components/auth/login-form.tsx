@@ -26,6 +26,13 @@ import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import Link from "next/link";
 
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+
 export const LoginForm = () => {
   const searchParams = useSearchParams();
   const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
@@ -78,24 +85,27 @@ export const LoginForm = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">
             {showTwoFactor && (
-              <FormField
-                control={form.control}
-                name="code"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Two Factor Code</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        disabled={isPending}
-                        placeholder="123456"
-                        autoComplete="off"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-red-500" />
-                  </FormItem>
-                )}
-              />
+              <div className="flex justify-center items-center">
+                <InputOTP
+                  name="code"
+                  disabled={isPending}
+                  maxLength={6}
+                  value={form.getValues("code")}
+                  onChange={(value) => form.setValue("code", value)}
+                >
+                  <InputOTPGroup className="rounded-xl">
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                  </InputOTPGroup>
+                  <InputOTPSeparator />
+                  <InputOTPGroup className="rounded-xl">
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+              </div>
             )}
 
             {!showTwoFactor && (
