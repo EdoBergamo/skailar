@@ -1,11 +1,14 @@
 "use client";
 
+import { useCurrentUser } from "@/hooks/use-current-user";
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import { UserNavigation } from "./user-navigation";
 
 export const Navbar = () => {
   const currentRoute = usePathname();
+  const user = useCurrentUser();
 
   const menu = [
     { id: 1, href: '/', text: 'Home' },
@@ -37,9 +40,13 @@ export const Navbar = () => {
         </div>
 
         <div>
-          <Link href='/login' className="bg-white text-black/90 border border-transparent font-semibold px-8 py-1 rounded-xl hover:bg-zinc-300 transition-all duration-300">
-            Login
-          </Link>
+          {!user ? (
+            <Link href='/login' className="bg-white text-black/90 border border-transparent font-semibold px-8 py-1 rounded-xl hover:bg-zinc-300 transition-all duration-300">
+              Login
+            </Link>
+          ) : (
+            <UserNavigation />
+          )}
         </div>
       </div>
     </div>
