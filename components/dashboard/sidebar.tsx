@@ -80,7 +80,7 @@ export const Sidebar = () => {
                                         <Image
                                             className="h-8 w-auto"
                                             src="/logo.png"
-                                            alt="RedEye"
+                                            alt="Skailar"
                                             width='32'
                                             height='32'
                                         />
@@ -118,11 +118,11 @@ export const Sidebar = () => {
                         <Image
                             className="h-8 w-auto"
                             src="/logo.png"
-                            alt="RedEye"
+                            alt="Skailar"
                             width='32'
                             height='32'
                         />
-                        <p className="ml-2 font-bold text-gray-300">RedEye</p>
+                        <p className="ml-2 font-bold text-gray-300">Skailar</p>
                     </a>
                     <nav className="flex flex-1 flex-col">
                         <ul role="list" className="flex flex-1 flex-col gap-y-7">
