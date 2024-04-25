@@ -11,6 +11,7 @@ export const publicRoutes = [
   "/reviews",
   "/contact",
   "/terms",
+  "/api/feedbacks"
 ]
 
 /**
