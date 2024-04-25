@@ -57,7 +57,7 @@ export const UserNavigation = () => {
                 <DropdownMenuContent className="bg-[#0A0A0A] w-56">
                     <DropdownMenuLabel className="px-2 py-1.5 text-sm font-semibold text-white">{user?.name}</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="text-gray-300 cursor-pointer disabled:cursor-not-allowed" disabled onClick={() => router.push('/dashboard')}>
+                    <DropdownMenuItem className="text-gray-300 cursor-pointer disabled:cursor-not-allowed" onClick={() => router.push('/dashboard')}>
                         Dashboard
                     </DropdownMenuItem>
                     <DropdownMenuItem className="text-gray-300 cursor-pointer" onClick={logout}>
