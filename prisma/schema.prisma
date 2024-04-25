@@ -87,3 +87,14 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model Feedback {
+  id          String  @id @default(cuid())
+  avatar      String
+  user        String
+  rating      Int
+  title       String
+  description String
+  featured    Boolean
+  joinedAt    String
+}
