@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Jumbotron } from "@/components/jumbotron";
 import { Navbar } from "@/components/navbar";
 import { Partners } from "@/components/partners";
+import { ReviewsSlider } from "@/components/reviews-slider";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Partners />
       <Features />
       <Discord />
+      <ReviewsSlider />
       <Footer />
     </main>
   );
